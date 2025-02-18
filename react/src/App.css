@@ -2,9 +2,10 @@ body{
   background-image: url(../public/background.png);
 }
 h1{
-  font-size: 44px;
+  font-size: 45px;
   text-align: center;
   font-weight: bold;
+  margin-top: 20px;
 }
 
 
@@ -21,3 +22,33 @@ h1{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 } 
+
+
+@media (max-width : 709px) {
+  .card img{
+    max-height: 75px;
+    max-width: 75px;
+    border:3px solid black;
+    border-radius:12px;
+    margin: 9px;
+}
+}
+@media (max-width : 565px) {
+  .card img{
+    max-height: 50px;
+    max-width: 50px;
+    border:2px solid black;
+    border-radius:8px;
+    margin: 6px;
+}
+}
+@media (max-width : 340px) {
+  .card img{
+    max-height: 40px;
+    max-width: 40px;
+    border:2px solid black;
+    border-radius:7px;
+    margin: 4px;
+}
+
+}
