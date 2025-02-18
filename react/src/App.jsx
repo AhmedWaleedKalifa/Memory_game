@@ -6,15 +6,27 @@ import ScoreBoard from './components/ScoreBoard';
 
 
 async function getBerryNames(number) {
-  let random = Math.floor(Math.random() * 44)
-  let response = await fetch(`https://pokeapi.co/api/v2/berry/?offset=${random}&limit=20`, { mode: "cors" })
+  // let random = Math.floor(Math.random() * 44)
+  // //
+  // random=0
+  // let limit=20;
+  // limit=64
+
+  let response = await fetch(`https://pokeapi.co/api/v2/berry/?offset=${0}&limit=${64}`, { mode: "cors" })
 
   let json = await response.json();
   let array = []
-  for (let i = 0; i < number; i++) {
-    array.push(json.results[i].name)
+
+  for (let i = 0; i < 64; i++) {
+    array.push({index:i,value:Math.random(),url:json.results[i].name})
   }
-  return array
+  array.sort((a, b) => a.value - b.value)
+  let tempCards = [];
+  for (let i = 0; i < number; i++) {
+    tempCards.push(array[i].url)
+  }
+
+  return tempCards
 }
 
 async function getImageUrl(name) {
@@ -74,7 +86,6 @@ function App() {
       <div className='colored'>
         <h1><span>Memory Game</span></h1>
       </div>
-      {/* <button style={{background:"red",width:"20px",height:"20px"}} onClick={()=>{setScore(score+1)}}></button> */}
       <ScoreBoard score={score} bestScore={bestScore}></ScoreBoard>
       {isLoading ? (<p style={{textAlign:"center",fontSize:"25px",color:"rgb(205, 39, 2)",marginTop:"70px"}}>loading...</p>)
         :
