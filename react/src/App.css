@@ -1,0 +1,23 @@
+body{
+  background-image: url(../public/background.png);
+}
+h1{
+  font-size: 44px;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.colored span {
+  background: linear-gradient(to right, rgb(205, 39, 2),rgb(255, 157, 96)); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 40px; 
+  font-weight: bold;
+}
+
+.colored {
+  background: linear-gradient(to right, gray, black); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} 
