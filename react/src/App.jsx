@@ -43,14 +43,14 @@ async function makeImagesArray(number) {
   }
   return urlsArray
 }
-function randomCards(cards) {
+function randomCards(cards,number) {
   let randomArray = []
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < number; i++) {
     randomArray.push({ index: i, value: Math.random().toFixed(2), url: cards[i] })
   }
   randomArray.sort((a, b) => a.value - b.value)
   let tempCards = [];
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < number; i++) {
     tempCards.push(randomArray[i].url)
   }
   return tempCards;
@@ -62,17 +62,17 @@ function App() {
   const [bestScore, setBestScore] = useState(0);
   const [selectedCards, setSelectedCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
+  const [numberOfCards, setNumberOfCards] = useState(20);
   useEffect(() => {
-    makeImagesArray(20).then(urls => {
-      setImageUrls(randomCards(urls))
+    makeImagesArray(numberOfCards).then(urls => {
+      setImageUrls(randomCards(urls,numberOfCards))
       setIsLoading(false)
     });
-  },[])
+  },[numberOfCards])
 
   useEffect(() => {
     if (imageUrls.length > 1) {
-      setImageUrls(randomCards(imageUrls));
+      setImageUrls(randomCards(imageUrls,numberOfCards));
     }
     if (score > bestScore) {
       setBestScore(score)
@@ -81,12 +81,25 @@ function App() {
     }
   }, [score])
 
+  function handleClick(){
+    let number=Number(prompt("Enter the number of cards from 1 to 64"));
+    if(number<1){
+      number=1
+    }else if(number>64){
+      number=64;
+    }else if(NaN){
+      number=20
+    }
+    setNumberOfCards(number)
+    setIsLoading(true)
+  }
   return (
     <>
       <div className='colored'>
         <h1><span>Memory Game</span></h1>
       </div>
       <ScoreBoard score={score} bestScore={bestScore}></ScoreBoard>
+      <button className='newGame' onClick={()=>{handleClick()}}>New Game</button>
       {isLoading ? (<p style={{textAlign:"center",fontSize:"25px",color:"rgb(205, 39, 2)",marginTop:"70px"}}>loading...</p>)
         :
         (<GameBoard array={imageUrls} score={score} setScore={setScore} selectedCards={selectedCards} setSelectedCards={setSelectedCards} ></GameBoard>)

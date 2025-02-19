@@ -7,7 +7,24 @@ h1{
   font-weight: bold;
   margin-top: 20px;
 }
-
+.newGame{
+  transition: all .5s ease-in-out;
+  background-color: #eeeeee;
+  border: 2px solid black;
+  padding:10px;
+  border-radius: 8px;
+  position: absolute;
+  font-size: 16px;
+  line-height: 24px;
+  right: calc(10% + 165px);
+  top:90px;
+  cursor: pointer;
+}
+.newGame:hover{
+  transition: all 1s ease-in-out;
+  background-color:black;
+  color:#eeeeee;
+}
 
 .colored span {
   background: linear-gradient(to right, rgb(205, 39, 2),rgb(255, 157, 96)); 

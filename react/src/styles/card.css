@@ -8,7 +8,9 @@
     margin: 12px;
     flex-shrink: 0;
     cursor: pointer;
+    user-select: none;
 }
 .card img:hover{
+    transition: all .5s ease-in-out;
     background-color: rgb(255, 157, 96);
 }

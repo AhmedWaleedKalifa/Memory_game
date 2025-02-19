@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: center;
 
-    box-shadow: 12px 8px 20px 10px rgb(49, 49, 49);
+    /* box-shadow: 12px 8px 20px 10px rgb(49, 49, 49); */
 }
 .container{
     width: 95%;
