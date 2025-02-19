@@ -40,32 +40,107 @@ h1{
   -webkit-text-fill-color: transparent;
 } 
 
+@media (max-width : 1400px) {
+  .card img{
+    max-height: calc(.9 * 100px);
+    max-width:calc(.9 * 100px);
+    border:calc(.9 * 4px) solid black;
+    border-radius:calc(.9 * 16px);
+    margin: calc(.9* 12px) !important;
+}
+.gameBoard{
+  padding:calc( .9 * 20px) 0 !important;
+}
+}
+@media (max-width : 1260px) {
+  .card img{
+    max-height: calc(.8 * 100px);
+    max-width:calc(.8 * 100px);
+    border:calc(.8 * 4px) solid black;
+    border-radius:calc(.8 * 16px);
+    margin: calc(.8* 12px) !important;
+}
+.gameBoard{
+  padding:calc( .8 * 20px) 0 !important;
+}
+}
+@media (max-width : 1000px) {
+  .card img{
+    max-height: calc(.75 * 100px);
+    max-width:calc(.75 * 100px);
+    border:calc(.75 * 4px) solid black;
+    border-radius:calc(.75 * 16px);
+    margin: calc(.75* 12px) !important;
+}
+.gameBoard{
+  padding:calc( .75 * 20px) 0 !important;
+}
+}
+@media (max-width : 800px) {
+  .card img{
+    max-height: calc(.65 * 100px);
+    max-width:calc(.65 * 100px);
+    border:calc(.65 * 4px) solid black;
+    border-radius:calc(.65 * 16px);
+    margin: calc(.65* 12px) !important;
+}
+.gameBoard{
+  padding:calc( .65 * 20px) 0 !important;
+}
+}
 
-@media (max-width : 709px) {
+@media (max-width : 585px) {
   .card img{
-    max-height: 75px;
-    max-width: 75px;
-    border:3px solid black;
-    border-radius:12px;
-    margin: 9px;
+    max-height: calc(.55 * 100px);
+    max-width:calc(.55 * 100px);
+    border:calc(.55 * 4px) solid black;
+    border-radius:calc(.55 * 16px);
+    margin: calc(.55* 12px) !important;
+}
+.gameBoard{
+  padding:calc( .55 * 20px) 0 !important;
+}
+.newGame,.scoreBoard{
+  font-size: 14px !important;
 }
 }
-@media (max-width : 565px) {
+
+@media (max-width : 502px) {
   .card img{
-    max-height: 50px;
-    max-width: 50px;
-    border:2px solid black;
-    border-radius:8px;
-    margin: 6px;
+    max-height: calc(.45 * 100px);
+    max-width:calc(.45 * 100px);
+    border:calc(.45 * 4px) solid black;
+    border-radius:calc(.45 * 16px);
+    margin: calc(.45* 12px) !important;
 }
+.gameBoard{
+  padding:calc( .45 * 20px) 0 !important;
 }
+
+}
+@media (max-width : 420px) {
+  .card img{
+    max-height: calc(.35 * 100px);
+    max-width:calc(.35 * 100px);
+    border:calc(.35 * 4px) solid black;
+    border-radius:calc(.35 * 16px);
+    margin: calc(.35* 12px) !important;
+}
+.gameBoard{
+  padding:calc( .35 * 20px) 0 !important;
+}
+
+}
+
 @media (max-width : 340px) {
   .card img{
-    max-height: 40px;
-    max-width: 40px;
-    border:2px solid black;
-    border-radius:7px;
-    margin: 4px;
+    max-height: calc(.30 * 100px);
+    max-width:calc(.30 * 100px);
+    border:calc(.30 * 4px) solid black;
+    border-radius:calc(.30 * 16px);
+    margin: calc(.30* 12px) !important;
 }
-
+.gameBoard{
+  padding:calc( .30 * 20px) 0 !important;
+}
 }
