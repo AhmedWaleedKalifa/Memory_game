@@ -6,6 +6,7 @@
     background-color: #eeeeee;
     border: 2px solid black;
     padding:10px;
+    min-width: 120px;
     border-radius: 8px;
     position: absolute;
     font-size: 16px;

@@ -5,6 +5,7 @@ import GameBoard from './components/GameBoard';
 import ScoreBoard from './components/ScoreBoard';
 
 
+
 async function getBerryNames(number) {
   // let random = Math.floor(Math.random() * 44)
   // //
@@ -62,7 +63,7 @@ function App() {
   const [bestScore, setBestScore] = useState(0);
   const [selectedCards, setSelectedCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [numberOfCards, setNumberOfCards] = useState(20);
+  const [numberOfCards, setNumberOfCards] = useState(40);
   useEffect(() => {
     makeImagesArray(numberOfCards).then(urls => {
       setImageUrls(randomCards(urls,numberOfCards))
@@ -79,19 +80,30 @@ function App() {
       let sound = new Audio("../../public/game-bonus-2-294436.mp3")
       sound.play();
     }
+    if(score==numberOfCards){
+      setBestScore(" Max")
+      let bestScoreParagraph=document.querySelector(".scoreBoard").lastChild;
+      bestScoreParagraph.style.color="green"
+      
+    }
   }, [score])
 
   function handleClick(){
-    let number=Number(prompt("Enter the number of cards from 1 to 64"));
-    if(number<1){
+    let number=Number(prompt("Enter the number of cards from 1 to 64",numberOfCards));
+    if(number<=1){
       number=1
     }else if(number>64){
       number=64;
-    }else if(NaN){
-      number=20
+    }else if(isNaN(number)){
+      number=numberOfCards
     }
     setNumberOfCards(number)
     setIsLoading(true)
+    setScore(0)
+    setBestScore(0)
+    setSelectedCards([])
+      let bestScoreParagraph=document.querySelector(".scoreBoard").lastChild;
+      bestScoreParagraph.style.color="black"
   }
   return (
     <>
