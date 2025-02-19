@@ -77,11 +77,11 @@ function App() {
     }
     if (score > bestScore) {
       setBestScore(score)
-      let sound = new Audio("../../public/game-bonus-2-294436.mp3")
+      let sound = new Audio("https://www.soundjay.com/buttons/sounds/button-37a.mp3")
       sound.play();
     }
     if(score==numberOfCards){
-      setBestScore(" Max")
+      setBestScore("Max")
       let bestScoreParagraph=document.querySelector(".scoreBoard").lastChild;
       bestScoreParagraph.style.color="green"
       
